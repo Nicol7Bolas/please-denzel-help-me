@@ -1,12 +1,23 @@
 // Q1. Create a variable called `denzel` - that can't be redeclared - and assign it the string 'please denzel, help me'
+const denzel = 'please denzel, help me';
+console.log(denzel);
+//constants can't be redeclared
 
 // Q2. Use the variable `actor` to create a new variable called `inspirational` that is assigned the string "Is Denzel Washington an inspirational actor?"
 const actor = 'Denzel Washington';
+const inspirational = "Is " + actor + " an inspirational actor?";
+console.log(inspirational);
 
 // Q3  Make an object called `family` and give it the following properties:
 // family has been `married` on "1983" (Number)
 // family is not `presidentOfTheUnitedStates` (boolean)
 // family has `children` called "John David", "Katia", "Olivia" and "Malcolm" (array of strings)
+const family = {
+    'married': 1983,
+    'presidentOfTheUnitedStates': false,
+    'children': ['John David', 'Katia', 'Olivia', 'Malcolm']
+};
+console.log("Family has been married in " + family.married + " and has the children: " + family.children);
 
 // Q4. Change
 // * the `name` stage to "A Raisin in the Sun"
@@ -16,11 +27,16 @@ const stage = {
   'name': 'Fences',
   'year': '2010'
 };
+stage.name = 'A Raisin in the Sun';
+stage.year = '2014';
+console.log(stage.name);
 
 // Q5. Change the `movie` "glory" to "Training Day" using square bracket notation
 const awards = {
   'movie': 'glory'
 };
+awards[0] = 'Training Day';
+console.log(awards.movie);
 
 // Q6. Create an object call "earlywork"
 // The key should be the movie name and the value the release year
@@ -30,28 +46,49 @@ const awards = {
 // * Power (1986)
 // * Cry Freedom (1987)
 // * For Queen and Countryy (1988)
+const earlywork{
+    'Carbon Copy': 1981,
+    'A Soldier Story': 1984,
+    'Power': 1986,
+    'Cry Freedom': 1987,
+    'For Queen and Countryy': 1988
+}
+console.log(earlywork.Power);
 
 // Q7. Return a new array from `debaters` with all item in uppercase
 const debaters = ['we do', 'what we have to do', 'in order to do', 'what we want to do'];
+var uppercaseDebaters = debaters.map(item=> item.toUpperCase());
+console.log(uppercaseDebaters);
 
 // Q8. Using this array do the following
 const directors = ['spikelee', 'ridleyscott', 'zemeckis'];
 
 // 1. add "tonyscott" value to the end of `directors` array
+var addedTony = directors.push('tonyscott');
+console.log(addedTony);
 
 // 2. remove "spikelee" value and store it in a variable called firstDirector
+var firstDirector = directors.shift();
 
 // 3. add "himself" value  to the start of `directors` array
+var addedHimself = directors.unshift('himself');
+console.log(addedHimself);
 
 // 4. remove "ridleyscott" value from the array and store it in a variable called secondDirector
+var secondDirector = directors.splice(pos, 1);
 
 // 5. let 'zemeckis' in the array but put a copy of it on a variable called thirdDirector
-
+var thirdDirector = directors[1];
+console.log(firstDirector, secondDirector, thirdDirector);
 
 // Q9. Write the function `duplicate` that return the expected result
+function duplicate(array){
+    var duplicatedArray = array.slice(0);
+    duplicatedArray.concat(array);
+    return duplicatedArray;
+}
 console.log(duplicate(['Happily', 'Ever', 'After', 'Fairy', 'Tales', 'for', 'Every', 'Child']));
 // ❯ ['Happily', 'Ever', 'After', 'Fairy', 'Tales', 'for', 'Every', 'Child', 'Happily', 'Ever', 'After', 'Fairy', 'Tales', 'for', 'Every', 'Child']
-
 
 // Q10. Refactor the current ES5-style function `police` in ES6-style.
 const police = function (names) {
