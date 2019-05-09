@@ -165,10 +165,25 @@ fetch('http://api.tvmaze.com/search/people?q=denzel+washington')
 
 // Q16. Give me at least 3 memorable websites that engage to continue (because of nice UX/UI AND avoid to give me facebook, airbnb etc...)
 
+// Wordpress is really well developped and user friendly which is even more important for a site that makes sites, I am also currently working on Gitlab for my internship and I like its design too.
+// I also discovered Slack for my PI2 Project this year and am still using it for internal communication at my current company
+
 // Q17. Describe an ESILV project that you worked on that you’re proud of?
+
+// My Pilliot2 project this year, we had to create a professional questionnaire for IOT businesses that helped them choose the best suited sensors and connected objects for their project
+// This involved a lot of research and design and database management and I felt we did a great job and delivered it right on time.
 
 // Q18. Describe an ESILV project that you worked on that you’re not so proud of?
 
+// My PIX2 project where I did not choose my team members and the project we chose did not get completed to what we had hoped for/envisioned. The objectives and the methodology were non-existent.
+
 // Q19. What are some things you like about the developer tools you use?
 
+// When they are powerfull and simple to use, meaning they do a lot of actions with minimal user input, having too many options and/or buttons confuses me more than it helps
+
 // Q20. Last question: could you explain me - in your terms - why I decided to focus on Javascript Ecosystem for the Web Architecture(s) course?
+
+// The metaphor would be because it's so big it would be hard to pass by. The actual reason is similar, Javascript, while young, is already omnipresent in web development.
+// The other factor is that it is changing but some techs that accompany it like React are really stable making it worthwhile to learn them. So yeah Javascript is here to stay.
+// And since its ecosystem is vast and some parts more complex you choose to focus on it to give us a complete and coherent course instead of just quickly discovering too many languages at once.
+// That is a methodology that is commendable in its own right. 
