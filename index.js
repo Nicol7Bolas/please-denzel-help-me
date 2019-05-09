@@ -46,7 +46,7 @@ console.log(awards.movie);
 // * Power (1986)
 // * Cry Freedom (1987)
 // * For Queen and Countryy (1988)
-const earlywork{
+const earlywork = {
     'Carbon Copy': 1981,
     'A Soldier Story': 1984,
     'Power': 1986,
@@ -64,27 +64,28 @@ console.log(uppercaseDebaters);
 const directors = ['spikelee', 'ridleyscott', 'zemeckis'];
 
 // 1. add "tonyscott" value to the end of `directors` array
-var addedTony = directors.push('tonyscott');
-console.log(addedTony);
+var newLength = directors.push('tonyscott');
+console.log(newLength);
 
 // 2. remove "spikelee" value and store it in a variable called firstDirector
 var firstDirector = directors.shift();
 
 // 3. add "himself" value  to the start of `directors` array
-var addedHimself = directors.unshift('himself');
-console.log(addedHimself);
+var newLength = directors.unshift('himself');
+console.log(newLength);
 
 // 4. remove "ridleyscott" value from the array and store it in a variable called secondDirector
-var secondDirector = directors.splice(pos, 1);
+var secondDirector = directors.splice(1, 1)[0];
 
 // 5. let 'zemeckis' in the array but put a copy of it on a variable called thirdDirector
 var thirdDirector = directors[1];
 console.log(firstDirector, secondDirector, thirdDirector);
+console.log(directors);
 
 // Q9. Write the function `duplicate` that return the expected result
 function duplicate(array){
     var duplicatedArray = array.slice(0);
-    duplicatedArray.concat(array);
+    duplicatedArray = duplicatedArray.concat(array);//we could have done the same thing twice but the slice function is faster than concat
     return duplicatedArray;
 }
 console.log(duplicate(['Happily', 'Ever', 'After', 'Fairy', 'Tales', 'for', 'Every', 'Child']));
@@ -102,19 +103,27 @@ const police = function (names) {
 
 const quotes = ['You will never see the light of... ', 'I run shit around here ', 'King Kong aint got shit on me '];
 
-console.log(police(chorus));
+console.log(police(quotes));
  // ❯ ['You will never see the light of... I am the police', 'I run shit around here I am the police', 'King Kong aint got shit on me I am the police'];
 
+const policeES6 = names => names.map(name => (name + 'I am the police'));//we keep it short and simple thanks to ES6-style
+console.log(policeES6(quotes)); 
 
 // Q11. Related to the https://www.tvmaze.com/people/66167/denzel-washington link
 // What's the query selector to get all Cast Credits titles (Live with Kelly & Ryan, The Late Show with Stephen Colbert...).
+var castcredits = document.querySelectorAll("#credits");
 
 // Q12. Related to the https://www.tvmaze.com/people/66167/denzel-washington link
 // How many http requests are performed to render the page?
 
+// I found that 228 HTTP requests are being performed to render the page
+
 // Q13. Related to the following api call with "curl"
 // ❯ curl "http://api.tvmaze.com/people/6616"
 // Could you describe and explain the response?
+
+// The response looks like this {"id":6616,"url":"http://www.tvmaze.com/people/6616/zach-shirey","name":"Zach Shirey","country":null,"birthday":null,"deathday":null,"gender":"Male","image":{"medium":"http://static.tvmaze.com/uploads/images/medium_portrait/62/156083.jpg","original":"http://static.tvmaze.com/uploads/images/original_untouched/62/156083.jpg"},"_links":{"self":{"href":"http://api.tvmaze.com/people/6616"}}}
+// It is an object which properties are the content displayed in the webpage, since we requested the id 6616 we got the actor whose id it is
 
 // Q14. Refactor the following codebase with a promise notation
 fs.readFile(filePath, function(err, data) {
@@ -126,6 +135,17 @@ fs.readFile(filePath, function(err, data) {
   // use the data object
   console.log(data)
 })
+var willReadFile = new Promise(
+    function (resolve, reject) {
+        if (err) {
+            reject(err);
+        } else {
+			resolve(data);
+        }
+    }
+);
+willReadFile.then(function(filePath){fs.readFile(filePath)});
+
 
 // Q15. Refactor the following codebase with async/await notation
 fetch('http://api.tvmaze.com/search/people?q=denzel+washington')
